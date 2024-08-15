@@ -1,0 +1,20 @@
+# This is the starting step for the Tic-Tac-Toe game
+
+import time
+print("Welcome to the game of Tic-Tac-Toe!")
+time.sleep(1)
+print("This is a classic game where you need to place either o or x in the empty fields")
+time.sleep(1)
+i = 0
+
+while i == 0:
+    strt = input("Would you like to play the game?")
+
+    if strt.lower() == 'yes':
+        print("Let's play!")
+        i = 1
+    elif strt.lower() == 'no':
+        print("See you next time!")
+        i = 1
+    else:
+        print("Please re-enter your answer")
