@@ -5,9 +5,7 @@ print("This is a classic game where you need to place either o or x in the empty
 time.sleep(1)
 print('The NPC will try to stop you from doing that!')
 i = 0
-game = [ '___', '___', '___',
-         '___', '___', '___',
-         '___', '___', '___' ]
+
 
 while i == 0:
     strt = input("Would you like to play the game?")
