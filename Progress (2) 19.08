@@ -1,0 +1,41 @@
+# What the code does, it prints out the lines 
+# for each input ( the spaces for either x,o or empty)
+# and it should be 9 spaces but currently it is more than that.
+
+
+import time
+print("Welcome to the game of Tic-Tac-Toe!")
+time.sleep(1)
+print("This is a classic game where you need to place either o or x in the empty fields and to try to get 3 of them in a row")
+time.sleep(1)
+print('The NPC will try to stop you from doing that!')
+i = 0
+j = 1
+p = 0
+
+
+while i == 0:
+    strt = input("Would you like to play the game?")
+
+    if strt.lower() == 'yes':
+        print("Let's play!")
+        game = ['___', '___', '___',
+                '___', '___', '___',
+                '___', '___', '___']
+        for x in game:
+            j += 1
+            if j == 10:
+                i = 1
+                print("\n Thank you for playing!")
+            else:
+                print(x, end="")
+                if j%3 == 0:
+                    print(x)
+                    p = 0
+                else:
+                    p = 0
+    elif strt.lower() == 'no':
+        print("See you next time!")
+        i = 1
+    else:
+        print("Please re-enter your answer")
