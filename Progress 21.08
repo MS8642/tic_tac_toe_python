@@ -1,0 +1,44 @@
+#Some important discoveries were made so 
+#it was decided to add this version here
+#for the sake of record keeping.
+
+import time
+print("Welcome to the game of Tic-Tac-Toe!")
+time.sleep(1)
+print("This is a classic game where you need to place either o or x in the empty fields and to try to get 3 of them in a row")
+time.sleep(1)
+print('The NPC will try to stop you from doing that!')
+i = 0
+j = 1
+p = 0
+
+
+while i == 0:
+    strt = input("Would you like to play the game?")
+
+    if strt.lower() == 'yes':
+        print("Let's play!")
+        game = ['empty', 'empty', 'empty',
+                'empty', 'empty', 'empty',
+                'empty', 'empty', 'empty']
+
+                 # This is a variable that will change according to the decision in the game.
+        for x in game: # x are the spaces where either an x,o or nothing can be placed.
+            j += 1 # a counter that counts empty spaces
+            if j == 10: # There are 9 lines, when the counter reaches the 9th empty space it stops
+                i = 1
+                print("\n Thank you for playing!")
+            else:
+                print(x) #if the counter has not reached the last line, print the empty spaces. NOTE! I dont need a star and inverted brackets print(*x,sep=',') it does it automatically.
+                if j == 9: #if the counter reaches a value that is divisible by 3 without any reminders ...
+                    print(x)
+                    p = 0
+                else:
+                    p = 0
+                    
+            
+    elif strt.lower() == 'no':
+        print("See you next time!")
+        i = 1
+    else:
+        print("Please re-enter your answer")
