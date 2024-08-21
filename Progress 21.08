@@ -1,6 +1,7 @@
 #Some important discoveries were made so 
 #it was decided to add this version here
 #for the sake of record keeping.
+#Note! PYcharm environment is used for this task.
 
 import time
 print("Welcome to the game of Tic-Tac-Toe!")
