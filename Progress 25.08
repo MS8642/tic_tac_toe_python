@@ -1,0 +1,62 @@
+# Now the game finishes when 3 in the row occur ( that is, top left, middle top, right top)
+
+import time
+print("Welcome to the game of Tic-Tac-Toe!")
+time.sleep(1)
+print("This is a classic game where you need to place either o or x in the empty fields and to try to get 3 of them in a row")
+time.sleep(1)
+print('The NPC will try to stop you from doing that!')
+print("You need to specify with commands where do you want to put the cross (X)")
+print("The commands are: Left top corner, Left side, Left low corner")
+print("Middle top, Middle, Middle low, Right top corner, Right side, Right low corner")
+i = 0
+j = 1
+p = 0
+q = 0
+
+
+while i == 0:
+    strt = input("Would you like to play the game?")
+
+    if strt.lower() == 'yes':
+        print("Let's play!")
+        game = ['empty', 'empty', 'empty',
+                'empty', 'empty', 'empty',
+                'empty', 'empty', 'empty']
+
+                 # This is a variable that will change according to the decision in the game.
+        for x in game: # x are the spaces where either an x,o or nothing can be placed.
+            j += 1 # a counter that counts empty spaces
+             #if the counter has not reached the last line, print the empty spaces. NOTE! I dont need a star and inverted brackets print(*x,sep=',') it does it automatically.
+            if j == 9: #if the counter reaches a value that is divisible by 3 without any reminders ...
+                print(x)
+
+
+            else:
+                print(x)
+                p = 0
+            while q == 0:
+                plr = input("Your move!")
+                if plr == "left top":
+                    game[0] = 'x'
+                elif plr == "left side":
+                    game[3] = 'x'
+                elif plr == 'left low':
+                    game[6] = 'x'
+                elif plr == "middle top":
+                    game[1] = 'x'
+                elif plr == 'middle':
+                    game[4] = 'x'
+                elif plr == 'middle low':
+                    game[7] = 'x'
+                elif plr == 'right top':
+                    game[2] = 'x'
+                elif plr == 'right side':
+                    game[5] = 'x'
+                elif plr == 'right low':
+                    game[8] = 'x'
+                print(game)
+                if game[0] and game[1] and game[2] == 'x':
+                    print('Congrats! You Win!')
+                    q = 1
+                    i = 1
