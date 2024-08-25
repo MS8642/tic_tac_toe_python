@@ -1,0 +1,420 @@
+# Some optimization was done ( that is, redundant code was removed)
+# however the game fails at certain selections. It could be because there
+# is a contreversy in the logic.
+# It may require a complete re-code.
+
+
+import time
+import random
+print("Welcome to the game of Tic-Tac-Toe!")
+time.sleep(1)
+print("This is a classic game where you need to place either o or x in the empty fields and to try to get 3 of them in a row")
+time.sleep(1)
+print('The NPC will try to stop you from doing that!')
+print("You need to specify with commands where do you want to put the cross (X)")
+print("The commands are: Left top corner, Left side, Left low corner")
+print("Middle top, Middle, Middle low, Right top corner, Right side, Right low corner")
+i = 0
+j = 1
+p = 0
+
+
+
+while i == 0:
+    strt = input("Would you like to play the game?")
+
+    if strt.lower() == 'yes':
+        print("Let's play!")
+        game = ['empty', 'empty', 'empty',
+                'empty', 'empty', 'empty',
+                'empty', 'empty', 'empty']
+        print(game)
+        plr = input("Your move!")
+
+        if plr == "left top":
+            game[0] = 'x'
+            if game[0] and game[1] and game[2] == 'x':  # Top side
+                print('Congrats! You Win!')
+                i = 1
+                # This works fine
+
+            elif game[3] and game[4] and game[5] == 'x':  # Middle line
+                print('Congrats! You Win!')
+                i = 1
+                # This works fine
+
+            elif game[6] and game[7] and game[8] == 'x':  # Bottom line
+                print('Congrats! You Win!')
+                i = 1
+                # Note: this condition doesn't work as intended. After left low selection it tells that the player won.
+
+            elif game[0] and game[3] and game[6] == 'x':  # All left side (Top to bottom)
+                print('Congrats! You Win!')
+                i = 1
+                # This works fine
+
+            elif game[1] and game[4] and game[7] == 'x':  # Middle (top to bottom)
+                print('Congrats! You Win!')
+                i = 1
+                # This works fine
+
+            elif game[2] and game[5] and game[8] == 'x':  # Right (top to bottom)
+                print('Congrats! You Win!')
+                i = 1
+                # Note : this asks the player to re-enter the answer for game[2]
+
+            elif game[0] and game[4] and game[8] == 'x':  # Cross ( top left to bottom right)
+                print('Congrats! You Win!')
+                i = 1
+                # This works fine
+
+            elif game[6] and game[4] and game[2] == 'x':  # Cross (Bottom right to top left)
+                print('Congrats! You Win!')
+                i = 1
+            else:
+                p = 0
+        elif plr == "left side":
+            game[3] = 'x'
+            if game[0] and game[1] and game[2] == 'x':  # Top side
+                print('Congrats! You Win!')
+                i = 1
+                # This works fine
+
+            elif game[3] and game[4] and game[5] == 'x':  # Middle line
+                print('Congrats! You Win!')
+                i = 1
+                # This works fine
+
+            elif game[6] and game[7] and game[8] == 'x':  # Bottom line
+                print('Congrats! You Win!')
+                i = 1
+                # Note: this condition doesn't work as intended. After left low selection it tells that the player won.
+
+            elif game[0] and game[3] and game[6] == 'x':  # All left side (Top to bottom)
+                print('Congrats! You Win!')
+                i = 1
+                # This works fine
+
+            elif game[1] and game[4] and game[7] == 'x':  # Middle (top to bottom)
+                print('Congrats! You Win!')
+                i = 1
+                # This works fine
+
+            elif game[2] and game[5] and game[8] == 'x':  # Right (top to bottom)
+                print('Congrats! You Win!')
+                i = 1
+                # Note : this asks the player to re-enter the answer for game[2]
+
+            elif game[0] and game[4] and game[8] == 'x':  # Cross ( top left to bottom right)
+                print('Congrats! You Win!')
+                i = 1
+                # This works fine
+
+            elif game[6] and game[4] and game[2] == 'x':  # Cross (Bottom right to top left)
+                print('Congrats! You Win!')
+                i = 1
+            else:
+                p = 0
+        elif plr == 'left low':
+            game[6] = 'x'
+            if game[0] and game[1] and game[2] == 'x':  # Top side
+                print('Congrats! You Win!')
+                i = 1
+                # This works fine
+
+            elif game[3] and game[4] and game[5] == 'x':  # Middle line
+                print('Congrats! You Win!')
+                i = 1
+                # This works fine
+
+            elif game[6] and game[7] and game[8] == 'x':  # Bottom line
+                print('Congrats! You Win!')
+                i = 1
+                # Note: this condition doesn't work as intended. After left low selection it tells that the player won.
+
+            elif game[0] and game[3] and game[6] == 'x':  # All left side (Top to bottom)
+                print('Congrats! You Win!')
+                i = 1
+                # This works fine
+
+            elif game[1] and game[4] and game[7] == 'x':  # Middle (top to bottom)
+                print('Congrats! You Win!')
+                i = 1
+                # This works fine
+
+            elif game[2] and game[5] and game[8] == 'x':  # Right (top to bottom)
+                print('Congrats! You Win!')
+                i = 1
+                # Note : this asks the player to re-enter the answer for game[2]
+
+            elif game[0] and game[4] and game[8] == 'x':  # Cross ( top left to bottom right)
+                print('Congrats! You Win!')
+                i = 1
+                # This works fine
+
+            elif game[6] and game[4] and game[2] == 'x':  # Cross (Bottom right to top left)
+                print('Congrats! You Win!')
+                i = 1
+            else:
+                p = 0
+        elif plr == "middle top":
+            game[1] = 'x'
+            if game[0] and game[1] and game[2] == 'x':  # Top side
+                print('Congrats! You Win!')
+                i = 1
+                # This works fine
+
+            elif game[3] and game[4] and game[5] == 'x':  # Middle line
+                print('Congrats! You Win!')
+                i = 1
+                # This works fine
+
+            elif game[6] and game[7] and game[8] == 'x':  # Bottom line
+                print('Congrats! You Win!')
+                i = 1
+                # Note: this condition doesn't work as intended. After left low selection it tells that the player won.
+
+            elif game[0] and game[3] and game[6] == 'x':  # All left side (Top to bottom)
+                print('Congrats! You Win!')
+                i = 1
+                # This works fine
+
+            elif game[1] and game[4] and game[7] == 'x':  # Middle (top to bottom)
+                print('Congrats! You Win!')
+                i = 1
+                # This works fine
+
+            elif game[2] and game[5] and game[8] == 'x':  # Right (top to bottom)
+                print('Congrats! You Win!')
+                i = 1
+                # Note : this asks the player to re-enter the answer for game[2]
+
+            elif game[0] and game[4] and game[8] == 'x':  # Cross ( top left to bottom right)
+                print('Congrats! You Win!')
+                i = 1
+                # This works fine
+
+            elif game[6] and game[4] and game[2] == 'x':  # Cross (Bottom right to top left)
+                print('Congrats! You Win!')
+                i = 1
+            else:
+                p = 0
+        elif plr == 'middle':
+            game[4] = 'x'
+            if game[0] and game[1] and game[2] == 'x':  # Top side
+                print('Congrats! You Win!')
+                i = 1
+                # This works fine
+
+            elif game[3] and game[4] and game[5] == 'x':  # Middle line
+                print('Congrats! You Win!')
+                i = 1
+                # This works fine
+
+            elif game[6] and game[7] and game[8] == 'x':  # Bottom line
+                print('Congrats! You Win!')
+                i = 1
+                # Note: this condition doesn't work as intended. After left low selection it tells that the player won.
+
+            elif game[0] and game[3] and game[6] == 'x':  # All left side (Top to bottom)
+                print('Congrats! You Win!')
+                i = 1
+                # This works fine
+
+            elif game[1] and game[4] and game[7] == 'x':  # Middle (top to bottom)
+                print('Congrats! You Win!')
+                i = 1
+                # This works fine
+
+            elif game[2] and game[5] and game[8] == 'x':  # Right (top to bottom)
+                print('Congrats! You Win!')
+                i = 1
+                # Note : this asks the player to re-enter the answer for game[2]
+
+            elif game[0] and game[4] and game[8] == 'x':  # Cross ( top left to bottom right)
+                print('Congrats! You Win!')
+                i = 1
+                # This works fine
+
+            elif game[6] and game[4] and game[2] == 'x':  # Cross (Bottom right to top left)
+                print('Congrats! You Win!')
+                i = 1
+            else:
+                p = 0
+        elif plr == 'middle low':
+            game[7] = 'x'
+            if game[0] and game[1] and game[2] == 'x':  # Top side
+                print('Congrats! You Win!')
+                i = 1
+                # This works fine
+
+            elif game[3] and game[4] and game[5] == 'x':  # Middle line
+                print('Congrats! You Win!')
+                i = 1
+                # This works fine
+
+            elif game[6] and game[7] and game[8] == 'x':  # Bottom line
+                print('Congrats! You Win!')
+                i = 1
+                # Note: this condition doesn't work as intended. After left low selection it tells that the player won.
+
+            elif game[0] and game[3] and game[6] == 'x':  # All left side (Top to bottom)
+                print('Congrats! You Win!')
+                i = 1
+                # This works fine
+
+            elif game[1] and game[4] and game[7] == 'x':  # Middle (top to bottom)
+                print('Congrats! You Win!')
+                i = 1
+                # This works fine
+
+            elif game[2] and game[5] and game[8] == 'x':  # Right (top to bottom)
+                print('Congrats! You Win!')
+                i = 1
+                # Note : this asks the player to re-enter the answer for game[2]
+
+            elif game[0] and game[4] and game[8] == 'x':  # Cross ( top left to bottom right)
+                print('Congrats! You Win!')
+                i = 1
+                # This works fine
+
+            elif game[6] and game[4] and game[2] == 'x':  # Cross (Bottom right to top left)
+                print('Congrats! You Win!')
+                i = 1
+            else:
+                p = 0
+        elif plr == 'right top':
+            game[2] = 'x'
+            if game[0] and game[1] and game[2] == 'x':  # Top side
+                print('Congrats! You Win!')
+                i = 1
+                # This works fine
+
+            elif game[3] and game[4] and game[5] == 'x':  # Middle line
+                print('Congrats! You Win!')
+                i = 1
+                # This works fine
+
+            elif game[6] and game[7] and game[8] == 'x':  # Bottom line
+                print('Congrats! You Win!')
+                i = 1
+                # Note: this condition doesn't work as intended. After left low selection it tells that the player won.
+
+            elif game[0] and game[3] and game[6] == 'x':  # All left side (Top to bottom)
+                print('Congrats! You Win!')
+                i = 1
+                # This works fine
+
+            elif game[1] and game[4] and game[7] == 'x':  # Middle (top to bottom)
+                print('Congrats! You Win!')
+                i = 1
+                # This works fine
+
+            elif game[2] and game[5] and game[8] == 'x':  # Right (top to bottom)
+                print('Congrats! You Win!')
+                i = 1
+                # Note : this asks the player to re-enter the answer for game[2]
+
+            elif game[0] and game[4] and game[8] == 'x':  # Cross ( top left to bottom right)
+                print('Congrats! You Win!')
+                i = 1
+                # This works fine
+
+            elif game[6] and game[4] and game[2] == 'x':  # Cross (Bottom right to top left)
+                print('Congrats! You Win!')
+                i = 1
+            else:
+                p = 0
+        elif plr == 'right side':
+            game[5] = 'x'
+            if game[0] and game[1] and game[2] == 'x':  # Top side
+                print('Congrats! You Win!')
+                i = 1
+                # This works fine
+
+            elif game[3] and game[4] and game[5] == 'x':  # Middle line
+                print('Congrats! You Win!')
+                i = 1
+                # This works fine
+
+            elif game[6] and game[7] and game[8] == 'x':  # Bottom line
+                print('Congrats! You Win!')
+                i = 1
+                # Note: this condition doesn't work as intended. After left low selection it tells that the player won.
+
+            elif game[0] and game[3] and game[6] == 'x':  # All left side (Top to bottom)
+                print('Congrats! You Win!')
+                i = 1
+                # This works fine
+
+            elif game[1] and game[4] and game[7] == 'x':  # Middle (top to bottom)
+                print('Congrats! You Win!')
+                i = 1
+                # This works fine
+
+            elif game[2] and game[5] and game[8] == 'x':  # Right (top to bottom)
+                print('Congrats! You Win!')
+                i = 1
+                # Note : this asks the player to re-enter the answer for game[2]
+
+            elif game[0] and game[4] and game[8] == 'x':  # Cross ( top left to bottom right)
+                print('Congrats! You Win!')
+                i = 1
+                # This works fine
+
+            elif game[6] and game[4] and game[2] == 'x':  # Cross (Bottom right to top left)
+                print('Congrats! You Win!')
+                i = 1
+            else:
+                p = 0
+        elif plr == 'right low':
+            game[8] = 'x'
+            if game[0] and game[1] and game[2] == 'x':  # Top side
+                print('Congrats! You Win!')
+                i = 1
+                # This works fine
+
+            elif game[3] and game[4] and game[5] == 'x':  # Middle line
+                print('Congrats! You Win!')
+                i = 1
+                # This works fine
+
+            elif game[6] and game[7] and game[8] == 'x':  # Bottom line
+                print('Congrats! You Win!')
+                i = 1
+                # Note: this condition doesn't work as intended. After left low selection it tells that the player won.
+
+            elif game[0] and game[3] and game[6] == 'x':  # All left side (Top to bottom)
+                print('Congrats! You Win!')
+                i = 1
+                # This works fine
+
+            elif game[1] and game[4] and game[7] == 'x':  # Middle (top to bottom)
+                print('Congrats! You Win!')
+                i = 1
+                # This works fine
+
+            elif game[2] and game[5] and game[8] == 'x':  # Right (top to bottom)
+                print('Congrats! You Win!')
+                i = 1
+                # Note : this asks the player to re-enter the answer for game[2]
+
+            elif game[0] and game[4] and game[8] == 'x':  # Cross ( top left to bottom right)
+                print('Congrats! You Win!')
+                i = 1
+                # This works fine
+
+            elif game[6] and game[4] and game[2] == 'x':  # Cross (Bottom right to top left)
+                print('Congrats! You Win!')
+                i = 1
+            else:
+                p = 0
+        print(game)
+
+        
+
+    elif strt.lower() == 'no':
+        print("See you next time!")
+        i = 1
+    else:
+        print("Please re-enter your answer")
