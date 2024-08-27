@@ -1,0 +1,10 @@
+def find_letter_occurrences(words, letter):
+    for word in words:
+        yield word.count(letter)
+words = ["apple", "banana", "cherry"]
+letter = "a"
+output = find_letter_occurrences(words, letter)
+print(output)
+
+#Output
+<generator object find_letter_occurrences at 0x102935e00>
