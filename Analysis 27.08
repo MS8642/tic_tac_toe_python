@@ -1,0 +1,16 @@
+#In the function there could be a couple statements
+# 1) try
+# 2) yield
+
+# try - in Python the try statement plays a role in handling errors. It allows
+# to write a code that may result in an exception and deal with it in a manner.
+# The "try" block contains the code that might trigger an error.
+
+# yield - this keyword in Python turns a regular function into a generator, which 
+# produces a sequence of values on demand instead of computing them 
+# at once.
+
+# When dealing with large datasets, generators offer a memory-efficient alternative to storing
+# data in lists, tuples, and other data structures that require space in memory for each of their
+# elements. Generator functions can also create infinite iterators, which are not possible with
+# eagerly evaluated structures like lists and tuples.
