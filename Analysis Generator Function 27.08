@@ -1,0 +1,29 @@
+First, let's define a regular function, which contains a return statement. This function
+accepts a sequence of words and a letter, and it returns a list containing the number of
+occurrences of the letter in each word:
+
+def find_letter_occurrences(words, letter):
+  output = []
+  for word in words:  
+      output.append(word.count(letter))
+  return output
+print(
+  find_letter_occurrences(["apple", "banana", "cherry"], "a")
+)
+
+#Output:
+
+[1,3,0]
+
+The function outputs a list containing 1, 3, and 0 since there's one a in apple, three
+occurrences of a in banana, and none in cherry. The same function can be refactored to use
+list comprehensions instead of initializing an empty list and using .append():
+
+def find_letter_occurrences(words, letter):
+  return [word.count(letter) for word in words]
+
+This regular function returns a list containing all the results whenever it's called. However, if
+the list of words is large, calling this regular function puts demands on memory requirements
+since the program creates and stores a new list of the same size as the original one. If this
+function is used repeatedly on several input arguments, or similar functions are performing 
+other operations on the original data, the pressure on memory can increase rapidly.
