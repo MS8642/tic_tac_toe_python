@@ -1,0 +1,11 @@
+# An attempt to solve a problem that finishes a game pre-maturely 
+
+# The creation of lists within a list could be a solution
+
+[ [],[],[],
+  [],[],[],
+  [],[],[] ]
+
+#The problem described above could have been rised by the fact that the program
+# decides that cross is the only object missing from winning in a particular position.
+# Therefore that means the program decides that the positions are filled.
