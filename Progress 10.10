@@ -1,0 +1,106 @@
+# The decision to replace the words 'empty' with empty lists
+# on respective positions gives correct results on the positions where 
+# the program was exiting abnormaly.
+
+#Should continue testing under different conditions.
+
+
+
+
+# An attempt to create winning condition
+
+
+
+import time
+import random
+print("Welcome to the game of Tic-Tac-Toe!")
+time.sleep(1)
+print("This is a classic game where you need to place either o or x in the empty fields and to try to get 3 of them in a row")
+time.sleep(1)
+print('The NPC will try to stop you from doing that!')
+print("You need to specify with commands where do you want to put the cross (X)")
+print("The commands are: Left top corner, Left side, Left low corner")
+print("Middle top, Middle, Middle low, Right top corner, Right side, Right low corner")
+i = 0
+j = 1
+p = 0
+q = 0
+
+game = [ [], [], [],
+         [], [], [],
+         [], [], []]
+while i == 0:
+    strt = input("Would you like to play the game?")
+
+    if strt.lower() == 'yes':
+        print("Let's play!")
+
+
+
+        print(game)
+        while q == 0:
+            plr = input("Your move!")
+            if plr == "left top":
+                game[0] = 'x'
+            elif plr == "left side":
+                game[3] = 'x'
+            elif plr == 'left low':
+                game[6] = 'x'
+            elif plr == "middle top":
+                game[1] = 'x'
+            elif plr == 'middle':
+                game[4] = 'x'
+            elif plr == 'middle low':
+                game[7] = 'x'
+            elif plr == 'right top':
+                game[2] = 'x'
+            elif plr == 'right side':
+                game[5] = 'x'
+            elif plr == 'right low':
+                game[8] = 'x'
+            print(game)
+            if game[0] and game[1] and game[2] == 'x': #Top side
+                print('Congrats! You Win!')
+                q = 1
+                i = 1
+            elif game[3] and game[4] and game[5] == 'x': #Middle line
+                print('Congrats! You Win!')
+                q = 1
+                i = 1
+            elif game[7] and game[6] and game[8] == 'x': #Bottom line
+                print('Congrats! You Win!')
+                q = 1
+                i = 1
+            #This doesnt work as intended
+            elif game[0] and game[3] and game[6] == 'x': #All left side (Top to bottom)
+                print('Congrats! You Win!')
+                q = 1
+                i = 1
+            elif game[1] and game[4] and game[7] == 'x': #Middle (top to bottom)
+                print('Congrats! You Win!')
+                q = 1
+                i = 1
+            elif game[2] and game[5] and game[8] == 'x': #Right (top to bottom)
+                print('Congrats! You Win!')
+                q = 1
+                i = 1
+                #This doesnt work as intended.
+            elif game[0] and game[4] and game[8] == 'x': #Cross ( top left to bottom right)
+                print('Congrats! You Win!')
+                q = 1
+                i = 1
+            elif game[6] and game[4] and game[2] == 'x': #Cross (Bottom right to top left)
+                print('Congrats! You Win!')
+                q = 1
+                i = 1
+            else:
+                print("Nice move!")
+            print(game)
+
+
+
+    elif strt.lower() == 'no':
+        print("See you next time!")
+        i = 1
+    else:
+        print("Please re-enter your answer")
