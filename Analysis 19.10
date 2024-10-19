@@ -1,0 +1,8 @@
+The code currently works this way:
+
+The player inserts an 'x' and then the NPC inserts 'o'.
+This needs to be changed since the player can be already 
+in a winning position and the NPC could still decide where to put the 'o'.
+
+It could be reasonable to fix this next while the 
+code is not cumbersome.
